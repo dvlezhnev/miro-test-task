@@ -1,0 +1,30 @@
+{
+  "name": "miro-test-task-emails-input",
+  "version": "1.0.0",
+  "description": "Test task for MIRO (emails-input)",
+  "main": "index.js",
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dvlezhnev/miro-test-task.git"
+  },
+  "author": "Denis Lezhnev <dvlezhnev@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dvlezhnev/miro-test-task/issues"
+  },
+  "homepage": "https://github.com/dvlezhnev/miro-test-task#readme",
+  "dependencies": {
+    "@rollup/plugin-typescript": "^4.1.1",
+    "rollup": "^2.7.2",
+    "rollup-plugin-livereload": "^1.2.0",
+    "rollup-plugin-scss": "^2.4.0",
+    "rollup-plugin-serve": "^1.0.1",
+    "rollup-plugin-terser": "^5.3.0",
+    "tslib": "^1.11.1",
+    "typescript": "^3.8.3"
+  }
+}
