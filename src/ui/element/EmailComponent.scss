@@ -1,0 +1,54 @@
+& > .email-component {
+  display: inline-block;
+  max-width: 100%;
+  padding-left: 10px;
+  box-sizing: border-box;
+  margin-right: 10px;
+  margin-bottom: 4px;
+
+  background: rgba(102, 153, 255, 0.2);
+  border-radius: 100px;
+
+  &.invalid {
+    padding-left: 0;
+
+    background: none;
+    border-bottom: 1px dashed #D92929;
+    border-radius: 0;
+  }
+
+  & > .text {
+    display: inline-block;
+    max-width: calc(100% - 24px);
+    // fix bug если display: inline-block и есть свойство overflow: hidden,
+    // то элементу добавляется высота
+    // vertical-align: top; убирает эту высоту
+    vertical-align: top;
+
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 14px;
+    line-height: 24px;
+    color: #050038;
+  }
+
+  & > button {
+    display: inline-block;
+    border: none;
+    padding: 0 8px;
+
+    background: transparent;
+    cursor: pointer;
+
+    font-family: 'Open Sans', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    color: #050038;
+  }
+}

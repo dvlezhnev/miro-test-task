@@ -4,8 +4,19 @@
     <meta charset="UTF-8">
     <title>MIRO TEST TASK</title>
     <script src="./emails-input.js"></script>
+    <style>
+        .test-wrapper {
+            width: 100%;
+            height: 50vh;
+        }
+    </style>
 </head>
 <body>
+<div class="test-wrapper">
     <div id="emails-input"></div>
+</div>
 </body>
+<script>
+    let emailsInput = EmailsInput(document.getElementById("emails-input"), {});
+</script>
 </html>
