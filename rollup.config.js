@@ -1,6 +1,6 @@
 import { terser } from "rollup-plugin-terser";
 import serve from "rollup-plugin-serve";
-import livereload from "rollup-plugin-livereload";
+// import livereload from "rollup-plugin-livereload";
 import scss from "rollup-plugin-scss";
 import typescript from "@rollup/plugin-typescript";
 
@@ -19,7 +19,7 @@ export default [{
 		!production && serve({
 			contentBase: ["public", "dist"]
 		}),
-		!production && livereload(),
+		// !production && livereload(),
 		scss({
 			output: "dist/emails-input.css",
 			watch: "src"

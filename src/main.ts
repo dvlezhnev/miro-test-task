@@ -12,9 +12,4 @@ declare var window: IWindowExtendedWithEmailsInput;
 (function main() {
     InstallPolyfills();
     window.EmailsInput = Factory;
-
-    let style = document.createElement("link");
-    style.rel = "stylesheet";
-    style.href = "./emails-input.css";
-    document.head.appendChild(style);
 })();
