@@ -1,4 +1,4 @@
-import {EmailCollectionEvents, IEmailCollection, IEmailElement} from "./interfaces";
+import {EmailCollectionEvents, IChangeEventData, IEmailCollection, IEmailElement} from "./interfaces";
 import {SimpleEventEmitter} from "../utils/SimpleEventEmitter";
 
 export class EmailCollection extends SimpleEventEmitter<EmailCollectionEvents> implements IEmailCollection {
@@ -24,11 +24,13 @@ export class EmailCollection extends SimpleEventEmitter<EmailCollectionEvents> i
             this._emails.add(email);
         });
 
-        this.emit("change", {
+        let eventData: IChangeEventData = {
             added: emails.map(email => email.text),
             removed: [],
             emails: this.emails
-        });
+        };
+
+        this.emit("change", eventData);
     }
 
     public set(emails: IEmailElement[]): void {
@@ -44,11 +46,13 @@ export class EmailCollection extends SimpleEventEmitter<EmailCollectionEvents> i
             this._emails.add(email);
         });
 
-        this.emit("change", {
+        let eventData: IChangeEventData = {
             added: emails.map(email => email.text),
             removed,
             emails: this.emails
-        });
+        }
+
+        this.emit("change", eventData);
     }
 
     protected bindSelf(): void {
@@ -58,10 +62,13 @@ export class EmailCollection extends SimpleEventEmitter<EmailCollectionEvents> i
     protected onRemoveHandler(email: IEmailElement): void {
         this._emails.delete(email);
         email.off("remove", this.onRemoveHandler);
-        this.emit("change", {
+
+        let eventData: IChangeEventData = {
             added: [],
             removed: [email.text],
             emails: this.emails
-        });
+        }
+
+        this.emit("change", eventData);
     }
 }

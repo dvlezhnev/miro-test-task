@@ -24,7 +24,7 @@ export class SimpleEventEmitter<T> implements IEventEmitter<T> {
         let cbs = this.events.get(event);
         if (!cbs) return;
         for (let cb of cbs) {
-            setTimeout(() => cb(data), 0);
+            cb(data);
         }
     }
 }

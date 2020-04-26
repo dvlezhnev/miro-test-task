@@ -1,3 +1,6 @@
+import {IChangeEventData} from "./logic/interfaces";
+import {Unsubscriber} from "./utils/interfaces";
+
 export type EmailInputFactory = (htmlElement: HTMLElement|string, options: Partial<IEmailsInputOptions>) => IEmailsInputApi;
 
 export interface IEmailsInputApi {
@@ -30,9 +33,14 @@ export interface IEmailsInputApi {
      * Список только невалидных e-mail'ов
      */
     invalidEmails: string[];
+
+    /**
+     * Добавляет подписку на событие изменения
+     */
+    addChangeHandler(cb: (data: IChangeEventData) => void): Unsubscriber;
 }
 
 export interface IEmailsInputOptions {
     initValue: string | string[];
-
+    onChangeHandler: (data: any) => void;
 }

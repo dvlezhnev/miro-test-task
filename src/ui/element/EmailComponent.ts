@@ -65,9 +65,9 @@ export class EmailComponent extends UIComponent implements IEmailUIComponent {
     }
 
     protected removeClickHandler(): void {
-        this.email.off("remove", this.externalRemoveHandler);
-        this.email.remove();
+        let email = this.email;
         this.remove();
+        email.remove();
     }
 
     protected bindSelf(): void {

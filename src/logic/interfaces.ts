@@ -1,6 +1,11 @@
 import {IEventEmitter} from "../utils/interfaces";
 
 export type EmailCollectionEvents = "change";
+export interface IChangeEventData {
+    added: string[];
+    removed: string[];
+    emails: string[];
+}
 export interface IEmailCollection extends IEventEmitter<EmailCollectionEvents> {
     emails: string[];
     add(emails: IEmailElement[]): void;
