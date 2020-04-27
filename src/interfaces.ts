@@ -42,5 +42,5 @@ export interface IEmailsInputApi {
 
 export interface IEmailsInputOptions {
     initValue: string | string[];
-    onChangeHandler: (data: any) => void;
+    onChangeHandler: (data: IChangeEventData) => void;
 }
