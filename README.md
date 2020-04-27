@@ -11,19 +11,19 @@ npx degit dvlezhnev/miro-test-task miro-test-task
 cd miro-test-task
 ```
 
-*Необходимо, что бы [Node.js](https://nodejs.org) был установлен*
+*Необходимо, чтобы [Node.js](https://nodejs.org) был установлен*
 
 
 ## Для начала
 
-Устанавливаем зависимостм
+Устанавливаем зависимости
 
 ```bash
 cd miro-test-task
 npm install
 ```
 
-Чтобы посмотреть как работает модуль отдельно можно запустить:
+Чтобы посмотреть, как работает модуль отдельно, можно запустить:
 
 ```bash
 npm run dev
@@ -48,7 +48,7 @@ npm run build
 
 ## Подключение
 
-Для использования в проекте реализован только вариант подключения модуля только через тэг <script>. Подробнее [тут](https://demo-miro-test-task.now.sh/#start)
+Для использования в проекте реализован только вариант подключения модуля через тэг <script>. Подробнее [тут](https://demo-miro-test-task.now.sh/#start)
 
 ```html
 <html>
@@ -77,7 +77,7 @@ window.EmailsInput
 ```
 
 ```javascript
-const emailsInput = window.EmailsInput(htmlElement[, options]);
+const emailsInput = window.EmailsInput(htmlElement, options);
 ```
 
 ### Интерфейсы и типы
@@ -103,7 +103,7 @@ interface IChangeEventData {
 interface IEmailsInputApi {
     /**
      * Заменяет все введённые e-mail'ы указанными
-     * @param {string|string[]} emails - E-mail(ы) которые нужно вставить
+     * @param {string|string[]} emails - E-mail(ы), которые нужно вставить
      */
     set(emails: string | string[]): void;
 
@@ -144,7 +144,7 @@ type Unsubscriber = () => void;
 
 *В задумке, метод add должен игнорировать добавления email'а, который уже есть*
 
-*При инициализации с хэндлером, должен быть нормальный способ избавиться от этого хэндлера*
+*При инициализации с хэндлером должен быть нормальный способ избавиться от этого хэндлера*
 
 ```javascript
 // workaround для отписки от изменений при инициализации с хэндлером
